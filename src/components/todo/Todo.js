@@ -1,19 +1,14 @@
-import { React } from "react";
+import React from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
-const Todo = ({ todo, toggleBool }) => {
-  const { id, name, bool } = todo;
+export const Todo = () => {
+  const { id } = useParams();
+  const navigate = useNavigate();
 
   return (
-    <li className="todo">
-      <span className="name">{name}</span>
-      <input
-        className="checkbox"
-        type="checkbox"
-        checked={bool}
-        onChange={() => toggleBool(id)}
-      />
-    </li>
+    <>
+      <div>todolist ID: {id}</div>
+      <button onClick={() => navigate(-1)}>goBack</button>
+    </>
   );
 };
-
-export default Todo;

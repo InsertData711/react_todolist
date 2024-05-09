@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
-import Todo from "../todo/Todo";
+import TodolistItem from "../TodolistItem/TodolistItem";
 import { AddedTodo } from "../addedTodo/AddedTodo";
 import "./Todolist.css";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 export const Todolist = () => {
   const [todolist, setTodolist] = useState([]);
 
+  // localsaved data
   useEffect(() => {
     setTodolist([
       { id: 1, name: "study", bool: false },
@@ -14,6 +17,18 @@ export const Todolist = () => {
       { id: 4, name: "gmy", bool: false },
     ]);
   }, []);
+
+  // mock-api saved data
+  // useEffect(() => {
+  //   axios
+  //     .get("/api/todolist")
+  //     .then((response) => {
+  //       setTodolist(response.data.todolist);
+  //     })
+  //     .catch((error) => {
+  //       console.error(`Error fetching todo list: ${error}`);
+  //     });
+  // }, []);
 
   const toggleBool = (id) => {
     setTodolist((prevState) =>
@@ -28,7 +43,8 @@ export const Todolist = () => {
       <AddedTodo todolist={todolist} setTodolist={setTodolist} />
       <ul className="todolist">
         {todolist.map((todo) => (
-          <Todo todo={todo} key={todo.id} toggleBool={toggleBool} />
+          <TodolistItem todo={todo} key={todo.id} toggleBool={toggleBool} />
+          // <Link to={`/todo/${todo.id}`}>{todo.name}</Link>
         ))}
       </ul>
     </>
