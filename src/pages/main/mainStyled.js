@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Container = styled.todo`
+const Container = styled.div`
   display: flex;
   flex-direction: colums;
 `;
