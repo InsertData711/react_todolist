@@ -1,5 +1,7 @@
 .todolist{
     margin: .7em;
+    display: grid;
+    place-items: center;
 }
 
 .todo{

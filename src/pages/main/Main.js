@@ -1,23 +1,9 @@
 import React from "react";
-import "./Main.css";
-import Todo from "../../components/Todo";
 
-const Main = ({ todolist, setTodolist }) => {
-  const toggleBool = (id) => {
-    setTodolist((prevState) =>
-      prevState.map((item) =>
-        item.id === id ? { ...item, bool: !item.bool } : item
-      )
-    );
-  };
+import { Todolist } from "../../components/todolist/Todolist";
 
-  return (
-    <ul className="todolist">
-      {todolist.map((todo) => (
-        <Todo todo={todo} key={todo.id} toggleBool={toggleBool} />
-      ))}
-    </ul>
-  );
+const Main = () => {
+  return <Todolist />;
 };
 
 export default Main;

@@ -1,0 +1,19 @@
+.todo__form{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+    width: 40em;
+    align-items: center;
+    justify-content: center;
+}
+
+.todo__input{
+    width: 20em;
+    height: 1.5em;
+    text-align: center;
+}
+
+.todo__submit{
+    width: 5.5em;
+    height: 1.5em;
+}
