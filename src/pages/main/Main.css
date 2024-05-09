@@ -1,0 +1,21 @@
+.todolist{
+    margin: .7em;
+}
+
+.todo{
+    list-style: none;
+    display: flex;
+}
+
+.checkbox{
+    align-items: center;
+    text-align: center;
+    width: 25px;
+    height: 25px;
+    margin-left: 5em;
+}
+
+.name{
+    font-size: 25px;
+    width: 400px;
+}
